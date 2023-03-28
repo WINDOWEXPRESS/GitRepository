@@ -1,0 +1,22 @@
+La programación orientada a objetos (POO) es un paradigma de programación que se basa en el concepto de "objetos", los cuales pueden ser vistos como instancias de una "clase". Una clase es una plantilla para crear objetos, y define las propiedades y comportamientos que tendrán estos objetos.
+
+Algunos términos comunes en POO son:
+
+Clase: Una plantilla para crear objetos.
+Objeto: Una instancia de una clase.
+Atributo: Una propiedad o característica de un objeto.
+Método: Un comportamiento o acción que puede realizar un objeto.
+Encapsulamiento: La idea de ocultar los detalles internos de un objeto y sólo proporcionar una interfaz pública para interactuar con él.
+Herencia: La posibilidad de crear una clase a partir de otra clase existente, heredando sus propiedades y comportamientos.
+Polimorfismo: La capacidad de un objeto para ser tratado como una instancia de su clase o de cualquiera de sus clases base.
+
+
+Tened en cuenta que la mayoría de los siguientes enlaces apuntan a una página de las varias que puede haber relacionadas. Fijaos en el menú de navegación de la izquierda con el listado de las distintas páginas que describen los distintos conceptos:
+
+https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos#Conceptos_fundamentales
+
+https://www.w3schools.com/java/java_oop.asp
+
+https://www.geeksforgeeks.org/classes-objects-java/
+
+https://www.javatpoint.com/java-oops-concepts

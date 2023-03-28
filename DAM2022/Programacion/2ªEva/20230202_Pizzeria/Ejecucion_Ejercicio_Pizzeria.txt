@@ -1,0 +1,259 @@
+
+===> MainPizzeria
+
+Introduce el nombre de la pizzería (no puede estar vacío): Pizzeria de Fer
+Introduce el número de clientes permitidos (mínimo 2, máximo 10): 2
+Introduce el número de pedidos permitidos (mínimo 2, máximo 20): 2
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:1
+Opción 1: Imprimir Detalles Pizzería:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=0, servidas=0
+Clientes registrados=0(max=2)
+Pedidos realizados=0(max=2)
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:3
+Opción 3: Añadir pedido:
+Error: No hay ningún cliente registrado. Necesitas añadir un cliente antes de poder crear un pedido.
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:4
+Opción 4: Servir pedido:
+Error: No se ha añadido ningún pedido. Para servir un pedido se debe haber creado previamente.
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:2
+Opción 2: Añadir cliente:
+Introduce el nombre del cliente: Alan
+Introduce los apellidos del cliente: Turing
+Introduce la dirección del cliente: Londres
+Introduce el teléfono del cliente: 111
+        OK: Cliente añadido correctamente
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:1
+Opción 1: Imprimir Detalles Pizzería:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=0, servidas=0
+Clientes registrados=1(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+Pedidos realizados=0(max=2)
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:3
+Opción 3: Añadir pedido:
+
+Clientes registrados=1(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+Introduce el número de cliente que hace el pedido (1-1): 0
+Introduce el número de cliente que hace el pedido (1-1): 2
+Introduce el número de cliente que hace el pedido (1-1): 1
+Seleccionado el cliente 1: Turing, Alan; direccion: Londres; telefono: 111
+Introduce el tamaño de la pizza usando el número (1=grande, 2=mediana): 0
+Introduce el tamaño de la pizza usando el número (1=grande, 2=mediana): 1
+Seleccionado el número 1 para el tamaño de la pizza
+Introduce el tipo de pizza usando el número (1=margarita, 2=cuatro quesos o 3=funghi): 4
+Introduce el tipo de pizza usando el número (1=margarita, 2=cuatro quesos o 3=funghi): 3
+Seleccionado el número 3 para el tipo de pizza
+Pedido guardado en posición 0. Pedido: cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, pedida]
+        OK: Pedido añadido correctamente
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:1
+Opción 1: Imprimir Detalles Pizzería:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=1, servidas=0
+Clientes registrados=1(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+Pedidos realizados=1(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, pedida]
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:2
+Opción 2: Añadir cliente:
+Introduce el nombre del cliente: Linus
+Introduce los apellidos del cliente: Torvalds
+Introduce la dirección del cliente: Helsinki
+Introduce el teléfono del cliente: 222
+        OK: Cliente añadido correctamente
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:2
+Opción 2: Añadir cliente:
+Error: Ya se ha alcanzado el máximo número de clientes (2), no se pueden añadir más.
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:3
+Opción 3: Añadir pedido:
+
+Clientes registrados=2(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+2) Torvalds, Linus; direccion: Helsinki; telefono: 222
+Introduce el número de cliente que hace el pedido (1-2): 2
+Seleccionado el cliente 2: Torvalds, Linus; direccion: Helsinki; telefono: 222
+Introduce el tamaño de la pizza usando el número (1=grande, 2=mediana): 1
+Seleccionado el número 1 para el tamaño de la pizza
+Introduce el tipo de pizza usando el número (1=margarita, 2=cuatro quesos o 3=funghi): 1
+Seleccionado el número 1 para el tipo de pizza
+Pedido guardado en posición 1. Pedido: cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+        OK: Pedido añadido correctamente
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:1
+Opción 1: Imprimir Detalles Pizzería:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=2, servidas=0
+Clientes registrados=2(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+2) Torvalds, Linus; direccion: Helsinki; telefono: 222
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, pedida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:3
+Opción 3: Añadir pedido:
+Error: Ya se ha alcanzado el máximo número de pedidos (2), no se pueden añadir más.
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:4
+Opción 4: Servir pedido:
+
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, pedida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+Introduce el número de pedido que quieres servir (1-2): 0
+Introduce el número de pedido que quieres servir (1-2): 3
+Introduce el número de pedido que quieres servir (1-2): 1
+Seleccionado el pedido 1: cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, pedida]
+OK: Se ha servido el pedido: cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:4
+Opción 4: Servir pedido:
+
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+Introduce el número de pedido que quieres servir (1-2): 1
+Seleccionado el pedido 1: cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+Error: El pedido seleccionado ya se ha servido.
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:4
+Opción 4: Servir pedido:
+
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+Introduce el número de pedido que quieres servir (1-2): 2
+Seleccionado el pedido 2: cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, pedida]
+OK: Se ha servido el pedido: cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, servida]
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:1
+Opción 1: Imprimir Detalles Pizzería:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=2, servidas=2
+Clientes registrados=2(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+2) Torvalds, Linus; direccion: Helsinki; telefono: 222
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, servida]
+
+==> Menú pizzería:
+        1->Imprimir detalles pizzería
+        2->Añadir cliente
+        3->Crear pedido
+        4->Servir pedido
+        5->Salir
+Elige la opción deseada:5
+Opción 5: Salir
+ESTADO FINAL DE LA PIZZERIA:
+Pizzería 'Pizzeria de Fer'. Total pizzas: pedidas=2, servidas=2
+Clientes registrados=2(max=2)
+1) Turing, Alan; direccion: Londres; telefono: 111
+2) Torvalds, Linus; direccion: Helsinki; telefono: 222
+Pedidos realizados=2(max=2)
+1) cliente=[Turing, Alan; direccion: Londres; telefono: 111], pizza=[grande, tipo funghi, servida]
+2) cliente=[Torvalds, Linus; direccion: Helsinki; telefono: 222], pizza=[grande, tipo margarita, servida]
+
+
+===> Bye, bye

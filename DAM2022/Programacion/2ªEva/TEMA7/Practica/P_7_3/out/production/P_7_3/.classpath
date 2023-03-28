@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="P_7_3/src/|P_7_4/src/|P_7_2/" kind="src" path=""/>
+	<classpathentry kind="src" path="P_7_2"/>
+	<classpathentry kind="src" path="P_7_3/src"/>
+	<classpathentry kind="src" path="P_7_4/src"/>
+	<classpathentry kind="output" path="P_7_3/out/production/P_7_3"/>
+</classpath>
