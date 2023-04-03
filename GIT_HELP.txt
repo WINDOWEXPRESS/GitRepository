@@ -1,11 +1,11 @@
 git init     		-> INICIAR DIRECTORIO LOCAL
-git add [FICHERO]  	-> AÑADIR FICHERO A STORAGE
-git add .    		-> AÑADIR TODAS LAS CARPETAS O FICHERO 
+git add [FICHERO]  	-> ANIADIR FICHERO A STAGE
+git add .    		-> ANIADIR TODAS LAS CARPETAS O FICHERO 
 git status  		-> VISUALIZAR ESTADO DE DIRECTORIO MAS ESPECIFICO
 git status -s  		-> VISUALIZAR ESTADO DE DIRECTORIO MAS SIMPLE
 git log  	        -> HISOTRIAL DE LOS COMMIT MAS ESPECIFICO
 git log  --oneline	-> HISOTRIAL DE LOS COMMIT MAS SIMPLE
-git commit -am "" 	-> COMMIT Y A(ADD) M(MESSENGER) PARA HACER UNA DESCRIPCION DE LA SUBIDA
+git commit -am "" 	-> COMMIT Y A(ADD) M(MESSENGER) PARA HACER UNA DESCRIPCION DE LA SUBIDA A STAGE
 git commit --amend 	-> UN EDITO DE VIM HAY MUCHAS FUNCIONES
 	:i 		-> EDITAR LA DESCRIPCION DE LA SUBIDA
 	:wq		-> FIJAR Y SALIR DE VIM
@@ -14,6 +14,12 @@ git pull 		-> BAJAR DE REMOTO A LOCAL
 git tag name "descrip"	-> ETIQUETA/VERSIONES PARA GUARDAR PROYECTO EN ZIP 
 git push --tags		-> SUBIR A REMOTO LOS TAGS
 git clone url 		-> CLONAR REPOSITORIO REMOTO A LOCAL
-git checkout name	-> CREAR UNA NUEVA RAMA
+git checkout -b name	-> CREAR UNA NUEVA RAMA
+git checkout  name	-> CAMBIAR A LA RAMA
+git switch -c name	-> CREAR UNA NUEVA RAMA
+git switch name		-> CAMBIAR A LA RAMA
+git branch		-> VISUALIZAR LAS RAMAS
+git branch name		-> CREAR UNA NUEVA RAMA
+git branch -d name  	-> BORRAR LA RAMA
 git merge name 		-> FUCIONAR RAMA DESDE MAIN 
 git fetch		-> 
