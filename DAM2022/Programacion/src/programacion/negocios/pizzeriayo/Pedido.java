@@ -1,4 +1,4 @@
-package programacion.negocios.pizzeriayo;
+package negocios.pizzeriayo;
 
 public class Pedido {
 	private Cliente cliente;

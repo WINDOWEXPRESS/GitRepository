@@ -1,4 +1,4 @@
-package programacion.negocios.pizzeriayo;
+package negocios.pizzeriayo;
 
 public class Cliente {
 	static int numCliente ;

@@ -1,21 +1,35 @@
+package trabajogeneral.fibonacci.src;
+
+import java.util.ArrayList;
+
 public class MainFibonacci {
-    static int count = 0 ;
+    static long[] sucesivoFibo;
+
     public static void main(String[] args) {
+        long tiempoInicio = System.currentTimeMillis();
         if(args.length>0){
-            int n = Integer.parseInt(args[0]);
-            System.out.println(fibonacci(n));
+        int n = Integer.parseInt(args[0]);
+        sucesivoFibo = new long[n+1];
+        System.out.println("El numero fibonacci es : " + n + " -> " + fibonacci(n));
+        }
+        long tiempoTranscurrido = System.currentTimeMillis() - tiempoInicio;
+        System.out.println("TIEMPO TRANSCURRIDO :" + tiempoTranscurrido );
+        for (long x : sucesivoFibo
+        ) {
+            System.out.print(x + " ");
         }
     }
-    static int fibonacci (int n){
-        /* PARA SABER EL PROCESO Y  REPEETICION DE RECURSIVA  Y DE MOMENTO NO SE ME OCURRE NADA PARA OPTIMIZAR
-        count++;
-        System.out.println("count = "+count +" n = "+n);
-        */
-        if (n == 0 ) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
+
+    static long fibonacci(int n) {
+        if (n <= 1) {
+            sucesivoFibo[n] = n;
+            return n;
+        } else if (sucesivoFibo[n] != 0) {
+            //SI EL VALOR EXISTIESE EN ARRAY NO CALCULA DEVUELVE DIRECTO
+            return sucesivoFibo[n];
+        } else {
+            sucesivoFibo[n] = fibonacci(n - 1) + fibonacci(n - 2);
+            return sucesivoFibo[n];
         }
-        return fibonacci(n-1) + fibonacci(n-2);
     }
 }
