@@ -1,4 +1,4 @@
-
+package juego.buscamina;
 
 import java.util.Scanner;
 

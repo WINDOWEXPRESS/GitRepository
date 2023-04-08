@@ -9,12 +9,12 @@ git commit -am "" 	-> COMMIT Y A(ADD) M(MESSENGER) PARA HACER UNA DESCRIPCION DE
 git commit --amend 	-> UN EDITO DE VIM HAY MUCHAS FUNCIONES
 	:i 		-> EDITAR LA DESCRIPCION DE LA SUBIDA
 	:wq		-> FIJAR Y SALIR DE VIM
-git push 		-> PARA SUBIR DIRECTORIO LOCAL A REMOTO
-git pull 		-> BAJAR DE REMOTO A LOCAL 
+git push origin name	-> PARA SUBIR DIRECTORIO LOCAL A REMOTO
+git pull origin name	-> BAJAR DE REMOTO A LOCAL 
 git tag name "descrip"	-> ETIQUETA/VERSIONES PARA GUARDAR PROYECTO EN ZIP 
 git push --tags		-> SUBIR A REMOTO LOS TAGS
 git clone url 		-> CLONAR REPOSITORIO REMOTO A LOCAL
-git checkout -b name	-> CREAR UNA NUEVA RAMA
+git checkout -b name	-> CREAR UNA NUEVA RAMA Y MOVER A ESA RAMA
 git checkout  name	-> CAMBIAR A LA RAMA
 git switch -c name	-> CREAR UNA NUEVA RAMA
 git switch name		-> CAMBIAR A LA RAMA
