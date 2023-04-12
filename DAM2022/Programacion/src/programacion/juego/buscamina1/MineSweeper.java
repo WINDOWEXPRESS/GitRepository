@@ -68,7 +68,10 @@ public class MineSweeper {
         }
         System.out.println();
     }*/
-    public String showElementCell(int coordenadaX, int coordenadaY){
+    public String getElementCell(int coordenadaX, int coordenadaY){
+        if (cellMineSweeper[coordenadaX][coordenadaY]==null){
+            return Sign.CASILLA.getSign();
+        }
         return cellMineSweeper[coordenadaX][coordenadaY];
     }
 }

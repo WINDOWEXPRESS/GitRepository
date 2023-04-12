@@ -60,8 +60,8 @@ public class Cell {
     public void setCellWithMine() {
         for (int i = 0; i < cell.length; i++) {
             for (int j = 0; j < cell[i].length; j++) {
-                if (mine.showElementCell(i, j).equals(Sign.MINA.getSign())
-                        && !Objects.equals(mine.showElementCell(i, j), Sign.BANDERA.getSign())) {
+                if (mine.getElementCell(i, j).equals(Sign.MINA.getSign())
+                        && !Objects.equals(mine.getElementCell(i, j), Sign.BANDERA.getSign())) {
                     cell[i][j] = Sign.MINA.getSign();
                 }
             }
@@ -84,14 +84,14 @@ public class Cell {
                 //Para que el primer paso nunca pise una mina
                 if (firstMove) {
                     mine.generateCellMineSweeper(coordenadaX, coordenadaY);
-                    cell[coordenadaX][coordenadaY] = mine.showElementCell(coordenadaX, coordenadaY);
+                    cell[coordenadaX][coordenadaY] = mine.getElementCell(coordenadaX, coordenadaY);
                     firstMove = false;
-                } else if (mine.showElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())) {
+                } else if (mine.getElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())) {
                     //cell[coordenadaX][coordenadaY] = mine.showElementCell(coordenadaX, coordenadaY);
                     JOptionPane.showMessageDialog(null, "Has pisado mina!!!\nFin de juego.");
                     setCellWithMine();
                 } else {
-                    cell[coordenadaX][coordenadaY] = mine.showElementCell(coordenadaX, coordenadaY);
+                    cell[coordenadaX][coordenadaY] = mine.getElementCell(coordenadaX, coordenadaY);
                 }
             }
             case 1 -> {
@@ -103,7 +103,7 @@ public class Cell {
                         !cell[coordenadaX][coordenadaY].equals(Sign.BANDERA.getSign())) {
                     JOptionPane.showMessageDialog(null, "Casilla invalida.");
                 }
-                setFlagOnMine(coordenadaX, coordenadaY);
+                numbFlagWithMine = isFlagOnMine(coordenadaX, coordenadaY) ? numbFlagWithMine-- : numbFlagWithMine++;
             }
             case 2 -> {
                 if (cell[coordenadaX][coordenadaY].equals(Sign.CASILLA.getSign())
@@ -112,6 +112,9 @@ public class Cell {
                 } else {
                     JOptionPane.showMessageDialog(null, "Casilla invalida.");
                 }
+            }
+            default -> {
+                JOptionPane.showMessageDialog(null, "HOli");
             }
         }
     }
@@ -131,22 +134,18 @@ public class Cell {
         } while ((coordenadaX < 0 || coordenadaX >= heigth) || (coordenadaY < 0 || coordenadaY >= witdh));
     }
 
-    public void setFlagOnMine(int coordenadaX, int coordenadaY) {
-        if (mine.showElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())) {
-            numbFlagWithMine--;
-        } else if (!mine.showElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign()) &&
-                cell[coordenadaX][coordenadaY].equals(Sign.CASILLA.getSign())) {
-            numbFlagWithMine--;
-        } else {
-            numbFlagWithMine++;
-        }
+    public boolean isFlagOnMine(int coordenadaX, int coordenadaY) {
+        if (mine.getElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())) {
+            return true;
+        } else return !mine.getElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign()) &&
+                cell[coordenadaX][coordenadaY].equals(Sign.CASILLA.getSign());
     }
 
     public boolean isGameOver() {
         if (numbFlagWithMine == 0) {
             JOptionPane.showMessageDialog(null, "Has ganado!!!\nFin de juego.");
             return true;
-        } else return mine.showElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())
+        } else return mine.getElementCell(coordenadaX, coordenadaY).equals(Sign.MINA.getSign())
                 && !cell[coordenadaX][coordenadaY].equals(Sign.BANDERA.getSign());
     }
 
