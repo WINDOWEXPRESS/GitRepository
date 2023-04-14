@@ -9,7 +9,6 @@ public abstract class AbstractProducto {
     protected LocalDate fechaCaducidad;
     protected LocalDate fechaEnvasada;
     protected String paisOrigen;
-    protected Set<Integer> arrayNumeroLote = new HashSet<>();
     public AbstractProducto() {}
     public AbstractProducto(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
         this.nombreProducto = nombreProducto;
@@ -21,23 +20,10 @@ public abstract class AbstractProducto {
 
     @Override
     public String toString() {
-        return "AbstractProducto{" +
-                "fechaCaducidad=" + fechaCaducidad +
+        return  "nombreProducto='" + nombreProducto + '\'' +
                 ", numeroLote=" + numeroLote +
+                ", fechaCaducidad=" + fechaCaducidad +
                 ", fechaEnvasada=" + fechaEnvasada +
-                ", paisOrigen='" + paisOrigen + '\'' +
-                '}';
+                ", paisOrigen='" + paisOrigen + '\'';
     }
-
-    public boolean addNumeroLote(int numeroLote) {
-        return arrayNumeroLote.add(numeroLote);
-    }
-    public void showNum() {
-        Iterator<Integer> ite = arrayNumeroLote.iterator();
-        while (ite.hasNext()){
-            System.out.println(ite.next());
-        }
-    }
-
-
 }

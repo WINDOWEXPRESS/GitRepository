@@ -6,11 +6,20 @@ import java.util.Date;
 
 public class Refrigerado extends AbstractProducto {
     private int codigoOrganismo;
-    private int temperaturaRecomendada;
-    private ArrayList<Refrigerado> productoRefrigelado = new ArrayList<>();
+    private float temperaturaRecomendada;
 
-
-    public Refrigerado(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
+    public Refrigerado(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada,
+                       String paisOrigen, int codigoOrganismo, float temperaturaRecomendada) {
         super(nombreProducto, numeroLote, fechaCaducidad, fechaEnvasada, paisOrigen);
+        this.codigoOrganismo = codigoOrganismo;
+        this.temperaturaRecomendada = temperaturaRecomendada;
+    }
+
+    @Override
+    public String toString() {
+        return "Refrigerado{" +super.toString()+
+                "codigoOrganismo=" + codigoOrganismo +
+                ", temperaturaRecomendada=" + temperaturaRecomendada +
+                '}';
     }
 }

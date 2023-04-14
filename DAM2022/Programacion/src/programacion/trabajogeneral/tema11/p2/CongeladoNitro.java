@@ -8,8 +8,9 @@ public class CongeladoNitro extends Congelado {
     //En segundo
     private int tiempoExposicionAlNitro;
 
-
-    public CongeladoNitro(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
+    public CongeladoNitro(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen, String metodoCongelacion, int tiempoExposicionAlNitro) {
         super(nombreProducto, numeroLote, fechaCaducidad, fechaEnvasada, paisOrigen);
+        this.metodoCongelacion = metodoCongelacion;
+        this.tiempoExposicionAlNitro = tiempoExposicionAlNitro;
     }
 }
