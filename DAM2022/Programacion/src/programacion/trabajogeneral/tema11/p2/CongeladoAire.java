@@ -1,11 +1,10 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 
 public final class CongeladoAire extends Congelado{
     String[] AIRE_CONGELADO = {"Nitrogeno", "Oxigeno", "Dioxido de carbono", "Vapor de agua"};
-    private float[] porcentajeCongeladoAire = new float[4];
+    private final float[] porcentajeCongeladoAire;
 
     public CongeladoAire(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada,
                          String paisOrigen, float[] porcentajeAireCongelado) {
@@ -14,11 +13,11 @@ public final class CongeladoAire extends Congelado{
     }
 
     public String listadoPorcentajeCongeladoAire() {
-        String cadena="";
+        StringBuilder cadena= new StringBuilder();
         for (int i = 0; i < porcentajeCongeladoAire.length; i++) {
-            cadena+=AIRE_CONGELADO[i]+":"+porcentajeCongeladoAire[i]+",";
+            cadena.append(AIRE_CONGELADO[i]).append(":").append(porcentajeCongeladoAire[i]).append(",");
         }
-        return cadena;
+        return cadena.toString();
     }
 
     @Override

@@ -1,11 +1,10 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class CongeladoAgua extends Congelado{
+public final class CongeladoAgua extends Congelado{
     //En gramo de sal por litro de agua
-    private int salinidadAgua;
+    private final int salinidadAgua;
 
     public CongeladoAgua(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen, int salinidadAgua) {
         super(nombreProducto, numeroLote, fechaCaducidad, fechaEnvasada, paisOrigen);

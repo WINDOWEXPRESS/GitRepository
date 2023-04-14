@@ -1,8 +1,6 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Congelado extends AbstractProducto {
     protected int temperaturaRecomendada;

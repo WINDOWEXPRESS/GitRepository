@@ -1,0 +1,133 @@
+[1mdiff --git a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/AbstractProducto.class b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/AbstractProducto.class[m
+[1mindex 2f31b9a..df563f9 100644[m
+Binary files a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/AbstractProducto.class and b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/AbstractProducto.class differ
+[1mdiff --git a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Fresco.class b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Fresco.class[m
+[1mindex 37d3954..311f4fe 100644[m
+Binary files a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Fresco.class and b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Fresco.class differ
+[1mdiff --git a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.class b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.class[m
+[1mindex 0afc154..5b9150e 100644[m
+Binary files a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.class and b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.class differ
+[1mdiff --git a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Refrigerado.class b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Refrigerado.class[m
+[1mindex 8428ce8..f328342 100644[m
+Binary files a/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Refrigerado.class and b/DAM2022/Programacion/src/out/production/Programacion/trabajogeneral/tema11/p2/Refrigerado.class differ
+[1mdiff --git a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/AbstractProducto.java b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/AbstractProducto.java[m
+[1mindex fc798a4..f8fca4d 100644[m
+[1m--- a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/AbstractProducto.java[m
+[1m+++ b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/AbstractProducto.java[m
+[36m@@ -9,7 +9,6 @@[m [mpublic abstract class AbstractProducto {[m
+     protected LocalDate fechaCaducidad;[m
+     protected LocalDate fechaEnvasada;[m
+     protected String paisOrigen;[m
+[31m-    protected Set<Integer> arrayNumeroLote = new HashSet<>();[m
+     public AbstractProducto() {}[m
+     public AbstractProducto(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {[m
+         this.nombreProducto = nombreProducto;[m
+[36m@@ -21,23 +20,10 @@[m [mpublic abstract class AbstractProducto {[m
+ [m
+     @Override[m
+     public String toString() {[m
+[31m-        return "AbstractProducto{" +[m
+[31m-                "fechaCaducidad=" + fechaCaducidad +[m
+[32m+[m[32m        return  "nombreProducto='" + nombreProducto + '\'' +[m
+                 ", numeroLote=" + numeroLote +[m
+[32m+[m[32m                ", fechaCaducidad=" + fechaCaducidad +[m
+                 ", fechaEnvasada=" + fechaEnvasada +[m
+[31m-                ", paisOrigen='" + paisOrigen + '\'' +[m
+[31m-                '}';[m
+[32m+[m[32m                ", paisOrigen='" + paisOrigen + '\'';[m
+     }[m
+[31m-[m
+[31m-    public boolean addNumeroLote(int numeroLote) {[m
+[31m-        return arrayNumeroLote.add(numeroLote);[m
+[31m-    }[m
+[31m-    public void showNum() {[m
+[31m-        Iterator<Integer> ite = arrayNumeroLote.iterator();[m
+[31m-        while (ite.hasNext()){[m
+[31m-            System.out.println(ite.next());[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-[m
+ }[m
+[1mdiff --git a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/Fresco.java b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/Fresco.java[m
+[1mindex 17bd4f5..78e8bcb 100644[m
+[1m--- a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/Fresco.java[m
+[1m+++ b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/Fresco.java[m
+[36m@@ -1,11 +1,8 @@[m
+ package trabajogeneral.tema11.p2;[m
+ [m
+ import java.time.LocalDate;[m
+[31m-import java.util.ArrayList;[m
+[31m-import java.util.Date;[m
+ [m
+ public class Fresco extends AbstractProducto {[m
+[31m-    protected ArrayList<Fresco> productoFresco = new ArrayList<>();[m
+ [m
+     public Fresco() {[m
+         super();[m
+[36m@@ -13,18 +10,12 @@[m [mpublic class Fresco extends AbstractProducto {[m
+ [m
+     public Fresco(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {[m
+         super(nombreProducto, numeroLote, fechaCaducidad, fechaEnvasada, paisOrigen);[m
+[31m-        this.productoFresco = productoFresco;[m
+     }[m
+ [m
+     @Override[m
+     public String toString() {[m
+         return "Fresco{" +[m
+[31m-                "nombreProducto='" + nombreProducto + '\'' +[m
+[31m-                ", numeroLote=" + numeroLote +[m
+[31m-                ", fechaCaducidad=" + fechaCaducidad +[m
+[31m-                ", fechaEnvasada=" + fechaEnvasada +[m
+[31m-                ", paisOrigen='" + paisOrigen + '\'' +[m
+[31m-                ", arrayNumeroLote=" + arrayNumeroLote +[m
+[32m+[m[32m                super.toString()+[m
+                 '}';[m
+     }[m
+ }[m
+[1mdiff --git a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.java b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.java[m
+[1mindex 4c8d461..e25ea46 100644[m
+[1m--- a/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.java[m
+[1m+++ b/DAM2022/Programacion/src/programacion/trabajogeneral/tema11/p2/ProductoAlimentariaMain.java[m
+[36m@@ -2,11 +2,12 @@[m [mpackage trabajogeneral.tema11.p2;[m
+ [m
+ import java.time.LocalDate;[m
+ import java.time.format.DateTimeFormatter;[m
+[31m-import java.util.Date;[m
+[31m-import java.util.InputMismatchException;[m
+[31m-import java.util.Scanner;[m
+[32m+[m[32mimport java.util.*;[m
+ [m
+ public class ProductoAlimentariaMain {[m
+[32m+[m[32m    static ArrayList<Fresco> listadoProductoFresco = new ArrayList<>();[m
+[32m+[m[32m    static ArrayList<Refrigerado> listadoProductoRefrigelado = new ArrayList<>();[m
+[32m+[m[32m    static Set<Integer> listadoNumeroLote = new HashSet<>();[m
+     static String nombreEmpresa;[m
+     public static void main(String[] args) {[m
+         //Instanciar la clase Scanner[m
+[36m@@ -34,12 +35,7 @@[m [mpublic class ProductoAlimentariaMain {[m
+             dato.nextLine();[m
+             switch (opcion) {[m
+                 case 1:[m
+[31m-                    Fresco fresco1 = new Fresco("nombre", 1, LocalDate.now(), LocalDate.now(), "paisDeOrigen");[m
+[31m-                    fresco1.addNumeroLote(1);[m
+[31m-[m
+[31m-                    fresco = new Fresco();[m
+                     System.out.println("Has seleccionado introducir un producto fresco.");[m
+[31m-[m
+                     // Pedir introducir los datos del producto[m
+                     do {[m
+                         System.out.println("Introduce el nombre del producto:");[m
+[36m@@ -53,8 +49,7 @@[m [mpublic class ProductoAlimentariaMain {[m
+                             System.out.println("Dato erroneo!");[m
+                             dato.nextLine();[m
+                         }[m
+[31m-[m
+[31m-                    } while (!fresco.addNumeroLote(numeroDeLote));[m
+[32m+[m[32m                    } while (!listadoNumeroLote.add(numeroDeLote));[m
+                     dato.nextLine();[m
+                     Date date ;[m
+                     do {[m
+[36m@@ -62,8 +57,8 @@[m [mpublic class ProductoAlimentariaMain {[m
+                         fechaDeCaducidad = dato.nextLine();[m
+                         fecha = LocalDate.parse(fechaDeCaducidad, 

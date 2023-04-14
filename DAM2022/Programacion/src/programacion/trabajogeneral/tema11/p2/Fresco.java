@@ -4,10 +4,6 @@ import java.time.LocalDate;
 
 public class Fresco extends AbstractProducto {
 
-    public Fresco() {
-        super();
-    }
-
     public Fresco(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
         super(nombreProducto, numeroLote, fechaCaducidad, fechaEnvasada, paisOrigen);
     }

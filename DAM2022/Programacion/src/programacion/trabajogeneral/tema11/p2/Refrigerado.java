@@ -1,12 +1,10 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Refrigerado extends AbstractProducto {
-    private int codigoOrganismo;
-    private float temperaturaRecomendada;
+    private final int codigoOrganismo;
+    private final float temperaturaRecomendada;
 
     public Refrigerado(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada,
                        String paisOrigen, int codigoOrganismo, float temperaturaRecomendada) {

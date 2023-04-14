@@ -14,7 +14,7 @@ public class ProductoAlimentariaMain {
     static ArrayList<CongeladoNitro> listadoProductoCongeladoNitro = new ArrayList<>();
     //Pensando con numero de lote de cada producto es unico entonces se guarda en un set
     static Set<Integer> listadoNumeroLote = new HashSet<>();
-
+    static String nombreEmpresa;
     static String nombre;
     static int numeroDeLote;
     static String fecha;
@@ -25,28 +25,29 @@ public class ProductoAlimentariaMain {
     static Scanner dato = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.print("Nombre de la empresa:");
+        nombreEmpresa = dato.nextLine();
         int opcion;
         do {
             Menu();
             opcion = dato.nextInt();
             dato.nextLine();
             switch (opcion) {
-                case 1:
+                case 1 -> {
                     // Definir instancia de las clases
                     Fresco fresco;
                     System.out.println("Has seleccionado introducir un producto fresco.");
                     capturarDatosComunes();
                     fresco = new Fresco(nombre, numeroDeLote, fechaEnvasado, LocalDate.now(), paisDeOrigen);
                     listadoProductoFresco.add(fresco);
-
                     System.out.println(fresco);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("Listado de productos frescos.");
                     System.out.println("---".repeat(10));
                     listadoDeProductos(listadoProductoFresco);
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     //Declarar variables locales e instancia de la clase
                     int temperaturaRecomendada = 0;
                     int codigoOrganismo = 0;
@@ -62,7 +63,6 @@ public class ProductoAlimentariaMain {
                             dato.nextLine();
                         }
                     } while (codigoOrganismo < 0);
-
                     try {
                         System.out.print("la temperatura de mantenimiento recomendada: ");
                         temperaturaRecomendada = dato.nextInt();
@@ -70,18 +70,17 @@ public class ProductoAlimentariaMain {
                         System.out.println("Tipo de dato introducido erroneo.");
                         dato.nextLine();
                     }
-
                     refrigerado = new Refrigerado(nombre, numeroDeLote, fechaDeCaducidad, fechaEnvasado, paisDeOrigen,
                             codigoOrganismo, temperaturaRecomendada);
                     listadoProductoRefrigelado.add(refrigerado);
                     System.out.println(refrigerado);
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("Listado de productos refrigerado.");
                     System.out.println("---".repeat(10));
                     listadoDeProductos(listadoProductoRefrigelado);
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     // Definir instancia de las clases
                     CongeladoAire congeladoAire;
                     //Listado de información
@@ -90,7 +89,7 @@ public class ProductoAlimentariaMain {
                     System.out.println("Has seleccionado introducir un producto congerado por aire.");
                     capturarDatosComunes();
                     for (int i = 0; i < AIRE_CONGELADO.length; i++) {
-                        float porCentaje = 0;
+                        float porCentaje;
                         do {
                             try {
                                 System.out.print("introducir % de " + AIRE_CONGELADO[i] + ": ");
@@ -107,13 +106,13 @@ public class ProductoAlimentariaMain {
                     congeladoAire = new CongeladoAire(nombre, numeroDeLote, fechaDeCaducidad, fechaEnvasado, paisDeOrigen,
                             porcentajeCongeladoAire);
                     listadoProductoCongeladoAire.add(congeladoAire);
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     System.out.println("Listado de productos congerados por aire.");
                     System.out.println("---".repeat(10));
                     listadoDeProductos(listadoProductoCongeladoAire);
-                    break;
-                case 7:
+                }
+                case 7 -> {
                     // Definir instancia de las clases
                     CongeladoAgua congeladoAgua;
                     //Variable local
@@ -130,17 +129,17 @@ public class ProductoAlimentariaMain {
                     congeladoAgua = new CongeladoAgua(nombre, numeroDeLote, fechaDeCaducidad, fechaEnvasado, paisDeOrigen,
                             salinidad);
                     listadoProductoCongeladoAgua.add(congeladoAgua);
-                    break;
-                case 8:
+                }
+                case 8 -> {
                     System.out.println("Listado de productos congerados por agua.");
                     System.out.println("---".repeat(10));
                     listadoDeProductos(listadoProductoCongeladoAgua);
-                    break;
-                case 9:
+                }
+                case 9 -> {
                     // Definir instancia de las clases
                     CongeladoNitro congeladoNitro;
                     //Variable local
-                    String metodoCongelacionEmpleado = "";
+                    String metodoCongelacionEmpleado;
                     int tiempoExposicion = 0;
                     System.out.println("Has seleccionado introducir un producto congerado por nitro.");
                     capturarDatosComunes();
@@ -158,25 +157,21 @@ public class ProductoAlimentariaMain {
                     congeladoNitro = new CongeladoNitro(nombre, numeroDeLote, fechaDeCaducidad, fechaEnvasado, paisDeOrigen,
                             metodoCongelacionEmpleado, tiempoExposicion);
                     listadoProductoCongeladoNitro.add(congeladoNitro);
-                    break;
-                case 10:
+                }
+                case 10 -> {
                     System.out.println("Listado de productos congerados por nitro.");
                     System.out.println("---".repeat(10));
                     listadoDeProductos(listadoProductoCongeladoNitro);
-                    break;
-                case 11:
-                    System.out.println("Fin del programa.");
-                    break;
-                default:
-                    System.out.println("Opcion invalido.");
+                }
+                case 11 -> System.out.println("Fin del programa.");
+                default -> System.out.println("Opcion invalido.");
             }
         } while (opcion != 11);
     }
 
 
     private static void Menu() {
-        System.out.print("Nombre de la empresa:");
-        String nombreEmpresa = dato.nextLine();
+
         int longitudCadena = (42 - nombreEmpresa.length()) / 2;
         System.out.println("==============================================");
         System.out.print("||" + "*".repeat(longitudCadena) + nombreEmpresa);
@@ -210,11 +205,11 @@ public class ProductoAlimentariaMain {
     private static void capturarDatosComunes() {
         // Pedir introducir los datos del producto
         do {
-            System.out.println("Introduce el nombre del producto:");
+            System.out.print("Introduce el nombre del producto:");
             nombre = dato.nextLine();
         } while (nombre.isEmpty());
         do {
-            System.out.println("Introduce su numero de lote: ");
+            System.out.print("Introduce su numero de lote: ");
             try {
                 numeroDeLote = dato.nextInt();
             } catch (InputMismatchException e) {
@@ -227,7 +222,7 @@ public class ProductoAlimentariaMain {
         // Definimos el formato de la fecha a ingresar
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         do {
-            System.out.println("Introduce su fecha de caducidad(formato dd/MM/yyyy):");
+            System.out.print("Introduce su fecha de caducidad(formato dd/MM/yyyy):");
             fecha = dato.nextLine();
             try {
                 fechaDeCaducidad = LocalDate.parse(fecha, formatter);
@@ -237,7 +232,7 @@ public class ProductoAlimentariaMain {
         } while (fecha.isEmpty());
 
         do {
-            System.out.println("Introduce su fecha de envasado(formato dd/MM/yyyy):");
+            System.out.print("Introduce su fecha de envasado(formato dd/MM/yyyy):");
             try {
                 fecha = dato.nextLine();
                 fechaEnvasado = LocalDate.parse(fecha, formatter);
@@ -247,7 +242,7 @@ public class ProductoAlimentariaMain {
         } while (fecha.isEmpty());
 
         do {
-            System.out.println("Introduce su pais de origen:");
+            System.out.print("Introduce su pais de origen:");
             paisDeOrigen = dato.nextLine();
         } while (paisDeOrigen.isEmpty());
 

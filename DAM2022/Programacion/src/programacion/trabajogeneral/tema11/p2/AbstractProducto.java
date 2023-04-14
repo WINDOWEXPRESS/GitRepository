@@ -1,7 +1,6 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.*;
 
 public abstract class AbstractProducto {
     protected String nombreProducto;
