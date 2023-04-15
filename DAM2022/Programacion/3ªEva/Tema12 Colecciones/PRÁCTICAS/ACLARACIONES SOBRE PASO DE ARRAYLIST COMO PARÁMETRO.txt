@@ -1,0 +1,10 @@
+
+
+//DECLARACIÓN DEL ARRAYLIST
+ArrayList<Correo> listaCorreos = new ArrayList<Correo>();
+
+//CÓMO PASARLO COMO PARÁMETRO
+anadirCorreo(listaCorreos);
+
+//CÓMO DEFINIR EL MÉTODO QUE RECIBE UN ARRAYLIST COMO PARÁMETRO
+public static void anadirCorreo(ArrayList<Correo> lC)
