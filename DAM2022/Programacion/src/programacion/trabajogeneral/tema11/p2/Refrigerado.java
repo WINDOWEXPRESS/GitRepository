@@ -16,6 +16,16 @@ public class Refrigerado extends AbstractProducto {
     }
 
     @Override
+    String getFILENAME() {
+        return null;
+    }
+
+    @Override
+    String getFILEHEADER() {
+        return null;
+    }
+
+    @Override
     public String toString() {
         return "Refrigerado{" +super.toString()+
                 "codigoOrganismo=" + codigoOrganismo +

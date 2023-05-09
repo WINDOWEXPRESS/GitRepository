@@ -1,16 +1,18 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.*;
 
 public abstract class AbstractProducto {
+    //Variables 
     protected String nombreProducto;
     protected int numeroLote;
     protected LocalDate fechaCaducidad;
     protected LocalDate fechaEnvasada;
     protected String paisOrigen;
-    public AbstractProducto() {}
-    public AbstractProducto(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
+    //Constructor vacio
+    protected AbstractProducto() {}
+    
+    protected AbstractProducto(String nombreProducto, int numeroLote, LocalDate fechaCaducidad, LocalDate fechaEnvasada, String paisOrigen) {
         this.nombreProducto = nombreProducto;
         this.numeroLote = numeroLote;
         this.fechaCaducidad = fechaCaducidad;
@@ -18,12 +20,24 @@ public abstract class AbstractProducto {
         this.paisOrigen = paisOrigen;
     }
 
+    abstract String getFILENAME();
+
+    abstract String getFILEHEADER();
+    public String toCSVLine(){
+        return nombreProducto + ',' +
+                numeroLote +
+                "," + fechaCaducidad +
+                ',' + fechaEnvasada +
+                ',' + paisOrigen + '\n';
+    }
+
+
     @Override
     public String toString() {
-        return  "nombreProducto='" + nombreProducto + '\'' +
-                ", numeroLote=" + numeroLote +
-                ", fechaCaducidad=" + fechaCaducidad +
-                ", fechaEnvasada=" + fechaEnvasada +
-                ", paisOrigen='" + paisOrigen + '\'';
+        return  "Producto='" + nombreProducto + '\'' +
+                ", numero lote=" + numeroLote +
+                ", fecha caducidad=" + fechaCaducidad +
+                ", fecha envasada=" + fechaEnvasada +
+                ", pais origen='" + paisOrigen + '\'';
     }
 }

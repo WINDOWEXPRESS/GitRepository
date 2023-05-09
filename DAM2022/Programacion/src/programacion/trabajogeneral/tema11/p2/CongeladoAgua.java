@@ -1,7 +1,6 @@
 package trabajogeneral.tema11.p2;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class CongeladoAgua extends Congelado{
     //En gramo de sal por litro de agua
