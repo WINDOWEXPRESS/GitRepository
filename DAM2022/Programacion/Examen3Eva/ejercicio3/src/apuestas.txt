@@ -1,0 +1,1 @@
+Numeros:7,10,27,43,50, Estrellas:7,12,
