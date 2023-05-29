@@ -4,8 +4,9 @@ public class Programador extends AbstractEmpleado {
     private String lenguaje;
     private boolean plusIdioma;
 
-    public Programador(String nombre, double sueldo, String lenguaje, boolean plusIdioma) {
-        super(nombre, sueldo);
+    public Programador(String dni, String nombre, double sueldo, String lenguaje, boolean plusIdioma)
+            throws ParametroInvalidoException {
+        super(dni, nombre, sueldo,TipoEmpleado.PROGRAMADOR);
         this.lenguaje = lenguaje;
         this.plusIdioma = plusIdioma;
     }
@@ -20,7 +21,7 @@ public class Programador extends AbstractEmpleado {
 
     @Override
     public String toString() {
-        return super.toString()+ "," + lenguaje + "," + plusIdioma;
+        return super.toString() + "," + lenguaje + "," + plusIdioma;
     }
 
 }

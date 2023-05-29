@@ -3,24 +3,23 @@ package programacion.examen.ej1;
 public class ContadorLetra implements Comparable<ContadorLetra> {
   Character letra;
   Integer contador;
-  
-  public ContadorLetra(Character letra, int contador) {
-    //TODO
+
+  public ContadorLetra(Character letra, Integer contador) {
+    this.letra = letra;
+    this.contador = contador;
   }
 
   public Character getLetra() {
-    //TODO
-    return ' ';
+    return letra;
   }
 
   public Integer getContador() {
-    //TODO
-    return 1;
+    return contador;
   }
 
   @Override
   public int compareTo(ContadorLetra o) {
-    return letra.compareTo(o.letra);
+    return contador.compareTo(o.contador);
   }
 
 }

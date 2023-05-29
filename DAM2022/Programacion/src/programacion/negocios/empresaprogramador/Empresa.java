@@ -1,60 +1,57 @@
 package negocios.empresaprogramador;
 
 import java.io.*;
-import java.util.Collection;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
 public class Empresa {
     private String nombreEmpresa;
+    private TreeSet<AbstractEmpleado> listaEmpleado;
+
+    public Empresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
+        listaEmpleado = new TreeSet<>();
+    }
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
     }
 
-    private TreeSet<AbstractEmpleado> listaEmpleado = new TreeSet<>();
-
-    public Empresa(String nombreEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
-    }
-
     public void addEmpleado(AbstractEmpleado empleado) {
+        if (listaEmpleado.contains(empleado)) {
+            System.out.println("Empleado '" + empleado.nombre + "' ya esta registrado en la empresa.");
+        }
         listaEmpleado.add(empleado);
     }
 
-    public void toStringEmpleados() {
-        int count = 1;
-        for (AbstractEmpleado empleado : listaEmpleado) {
-            System.out.println((count++) + ")" + empleado);
-        }
-    }
 
-    public void toStringProgramadores() {
-        int count = 1;
-        for (AbstractEmpleado empleado : listaEmpleado) {
-            if (empleado instanceof Programador) {
-                System.out.println((count++) + ")" + empleado);
-            }
-        }
-    }
-
-    public void toStringOrdenSueldo() {
+    public String toStringOrdenSueldo() {
         TreeSet<AbstractEmpleado> listaEmpleadoOrdenSueldo = new TreeSet<>(AbstractEmpleado.ORDENAR_POR_SUELDO);
         listaEmpleadoOrdenSueldo.addAll(this.listaEmpleado);
-        int count = 1;
-        for (AbstractEmpleado empleado : listaEmpleadoOrdenSueldo) {
-            System.out.println((count++) + ")" + empleado);
+        String cadednaListaEmpleado = "";
+        Iterator<AbstractEmpleado> iteratorEmpleado = listaEmpleadoOrdenSueldo.iterator();
+        while (iteratorEmpleado.hasNext()) {
+            cadednaListaEmpleado += iteratorEmpleado.next() + "\n";
         }
+        return cadednaListaEmpleado;
     }
 
-    // TreeSet Implementa comparable ya esta en orden natural por nombre
-    public void toStringOrdenNombre() {
-        toStringEmpleados();
+    public String toStringOrdenNombre() {
+        //usando clase anonimo y expresion lambda
+        TreeSet<AbstractEmpleado> listaEmpleadoOrdenNombre = new TreeSet<>((o1, o2) -> o1.nombre.compareTo(o2.nombre));
+        listaEmpleadoOrdenNombre.addAll(listaEmpleado);
+        String cadednaListaEmpleado = "";
+        Iterator<AbstractEmpleado> iteratorEmpleado = listaEmpleadoOrdenNombre.iterator();
+        while (iteratorEmpleado.hasNext()) {
+            cadednaListaEmpleado += iteratorEmpleado.next() + "\n";
+        }
+        return cadednaListaEmpleado;
     }
 
     public void cargarDesdeCSV(String archivoCargar) {
         File file = new File(archivoCargar);
-        String texto = "";
+        String texto;
         if (file.exists()) {
             try (BufferedReader lectorBufferDeFichero = new BufferedReader(new FileReader(file))) {
                 texto = lectorBufferDeFichero.readLine();
@@ -74,7 +71,7 @@ public class Empresa {
     }
 
     public void guardarEnCSV(String archivoGuardar) throws RuntimeException {
-        Boolean aniadirDesdeUltimaLinea = false;
+        boolean aniadirDesdeUltimaLinea = false;
         String respuesta = "";
         File file = new File(archivoGuardar);
         try (Scanner scanner = new Scanner(System.in)) {
@@ -105,5 +102,26 @@ public class Empresa {
         }
 
     }
+
+    public String toStringEmpleadoPorPuesto(TipoEmpleado tipoEmpleado) {
+        String cadednaListaEmpleado = "";
+        for (AbstractEmpleado empleado : listaEmpleado) {
+            if (empleado.getTipoEmpleado() == tipoEmpleado) {
+                cadednaListaEmpleado += empleado + "\n";
+            }
+        }
+        return  cadednaListaEmpleado;
+    }
+
+    @Override
+    public String toString() {
+        String cadednaListaEmpleado = "";
+        Iterator<AbstractEmpleado> iteratorEmpleado = listaEmpleado.iterator();
+        while (iteratorEmpleado.hasNext()) {
+            cadednaListaEmpleado += iteratorEmpleado.next() + "\n";
+        }
+        return cadednaListaEmpleado;
+    }
+
 
 }
